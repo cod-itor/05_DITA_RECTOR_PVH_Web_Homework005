@@ -1,29 +1,20 @@
-import React from 'react'
+import React from "react";
 
-const sidebar = () => {
+const Sidebar = () => {
   return (
-    <div className= 'flex p-1 bg-blue-950 rounded-2xl text-white' >
-        <h1 className=''>MENU</h1>
-        <div>
-            <div>
-                <p>Overview</p>
-            </div>
-            <div>
-                <p>Items</p>
-            </div>
-            <div>
-                <p>Orders</p>
-            </div>
-            <div>
-                <p>Customers</p>
-            </div>
-            <div>
-                <p>Settings</p>
-            </div>
-        </div>
-      
-    </div>
-  )
-}
+    <aside className="flex flex-col p-4 bg-blue-950 rounded-2xl text-white min-h-screen w-48 gap-6">
+      <h1 className="text-lg">Menu</h1>
+      <nav>
+        <ul className="flex flex-col gap-4">
+          <li className="hover:text-blue-300 cursor-pointer">Overview</li>
+          <li className="hover:text-blue-300 cursor-pointer">Items</li>
+          <li className="hover:text-blue-300 cursor-pointer">Orders</li>
+          <li className="hover:text-blue-300 cursor-pointer">Customers</li>
+          <li className="hover:text-blue-300 cursor-pointer">Settings</li>
+        </ul>
+      </nav>
+    </aside>
+  );
+};
 
-export default sidebar
+export default Sidebar;

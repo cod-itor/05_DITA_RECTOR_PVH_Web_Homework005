@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import { items } from "@/data/Item";
+import Image from "next/image";
 
-export default function viewProduct() {
+const ViewProduct = () => {
   return (
     <div>
-      
+      Hello this is teh new web 
     </div>
-  )
-}
+  );
+};
+
+export default ViewProduct;
