@@ -3,26 +3,9 @@ import React from 'react'
 
 const ViewProductButton = ({children , onClick}) => {
   return (
-    <div className=''>
-        <div>
-            <Image>
-
-            </Image>
-            <div>
-                <div>
-                    <h1>Wireless Mouse</h1>
-                    <p>price</p>
-                    <i>icon</i>
-                </div>
-                <p>Ergonomic wireless </p>
-            </div>
-
-        </div>
-        <div>
-            <button>View</button>
-        </div>
-
-    </div>
+    <button onClick={onClick} className="bg-indigo-700 hover:bg-indigo-600 text-white text-sm font-semibold px-5 py-2 rounded-xl shrink-0 transition-colors">
+          {children}
+    </button>
   )
 }
 

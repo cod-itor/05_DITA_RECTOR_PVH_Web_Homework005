@@ -9,7 +9,7 @@ const Home = () => {
       <Navbar />
       <div className="flex flex-1 overflow-hidden">
         <Sidebar />
-        <div className="flex-1 p-6 bg-gray-100">
+        <div className="flex-1 p-6 bg-black">
           <ViewProduct />
         </div>
       </div>
