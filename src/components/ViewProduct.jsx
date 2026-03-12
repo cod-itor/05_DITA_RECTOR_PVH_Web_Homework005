@@ -13,6 +13,7 @@ const ViewProduct = () => {
   const [bookmarkList, setBookmarkList] = useState(items);
   const [showSavedOnly, setShowSavedOnly] = useState(false);
   const [sortOrder, setSortOrder] = useState("none");
+  const [openId, setOpenId] = useState(null);
 
   const toggleSave = (id) => {
     setBookmarkList(
@@ -21,7 +22,7 @@ const ViewProduct = () => {
           return { ...item, saved: !item.saved };
         }
         return item;
-      })
+      }),
     );
   };
 
@@ -38,7 +39,12 @@ const ViewProduct = () => {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between text-white px-1">
-        <BackButton />
+        <BackButton
+          onBack={() => {
+            setShowSavedOnly(false);
+            setSortOrder("none");
+          }}
+        />
         <div className="flex items-center gap-3">
           <BookMarkSave
             showSavedOnly={showSavedOnly}
@@ -74,7 +80,12 @@ const ViewProduct = () => {
             <p className="text-sm text-gray-400">{item.item_description}</p>
           </div>
 
-          <ViewButtonDetail item={item} />
+          <ViewButtonDetail
+            item={item}
+            isOpen={openId === item.id}
+            onOpen={() => setOpenId(item.id)}
+            onClose={() => setOpenId(null)}
+          />
         </div>
       ))}
     </div>
