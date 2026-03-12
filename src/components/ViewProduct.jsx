@@ -59,7 +59,7 @@ const ViewProduct = () => {
           key={item.id}
           className="flex items-center justify-between bg-gray-900 text-white rounded-2xl p-4 gap-4"
         >
-          <div className="relative w-16 h-16 shrink-0 rounded-xl overflow-hidden">
+          <div className="relative w-16 h-16 rounded-xl overflow-hidden">
             <Image
               src={item.image}
               alt={item.item_name}

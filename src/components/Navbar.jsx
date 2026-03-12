@@ -5,6 +5,7 @@ const Navbar = () => {
     <div className="bg-black  flex items-center text-white justify-between p-4">
       <div className="flex items-center gap-3">
         <img
+        className="rounded-full border broder-white"
           src="https://a.pinatafarm.com/750x691/29465c37d5/sad-cat-e963aa04f163b1b2ecdc0a24e0ac53fa-meme.jpeg"
           width={48}
           height={48}

@@ -10,7 +10,7 @@ const BookmarkButton = ({ saved, onToggle }) => {
       aria-label="Save item"
     >
       <Bookmark
-        className="w-5 h-5 transition-colors duration-200"
+        className="w-5 h-5"
         fill={saved ? "#facc15" : "none"}
         stroke={saved ? "#facc15" : "currentColor"}
       />

@@ -6,7 +6,7 @@ export default function BookMarkSave({ showSavedOnly, onToggle }) {
     <div>
       <button
         onClick={onToggle}
-        className={`font-bold text-base flex items-center gap-1 hover:cursor-pointer px-3 py-1 rounded-xl transition-colors ${
+        className={`font-bold text-base flex items-center gap-1 hover:cursor-pointer px-3 py-1 rounded-xl  ${
           showSavedOnly
         }`}
       >
