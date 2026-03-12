@@ -8,7 +8,7 @@ export default function ViewButtonDetail({ item }) {
     <div>
       <button
         onClick={() => setOpen(!open)}
-        className="bg-indigo-700 hover:bg-indigo-600 text-white text-sm font-semibold px-5 py-2 rounded-xl shrink-0 transition-colors"
+        className="bg-indigo-700 hover:bg-indigo-600 text-white text-sm font-semibold px-5 py-2 rounded-xl hover:cursor-pointer"
       >
         View
       </button>

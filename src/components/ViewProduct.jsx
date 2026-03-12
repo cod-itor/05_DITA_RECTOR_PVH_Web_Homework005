@@ -8,23 +8,37 @@ import ViewButtonDetail from "./ViewButtonDetail";
 import BookMarkSave from "./BookMarkSave";
 
 const ViewProduct = () => {
-  const [savedList, setSavedList] = useState(items);
+  const [bookmarkList, setbookmarkList] = useState(items);
   const [showSavedOnly, setShowSavedOnly] = useState(false);
+  const [sortOrder, setSortOrder] = useState("none");
 
   const toggleSave = (id) => {
-    setSavedList(
-      savedList.map((item) => {
+    setbookmarkList(
+      bookmarkList.map((item) => {
         if (item.id === id) {
-          return { ...item, saved: !item.saved };
+          return {
+            ...item,
+            saved: !item.saved,
+          };
         }
         return item;
       }),
     );
   };
 
-  const displayedItems = showSavedOnly
-    ? savedList.filter((item) => item.saved === true)
-    : savedList;
+  const filteredItems = showSavedOnly
+    ? bookmarkList.filter((item) => item.saved === true)
+    : bookmarkList;
+
+  const displayedItems = [...filteredItems].sort((a, b) => {
+    if (sortOrder === "asc") {
+      return a.item_name.localeCompare(b.item_name);
+    }
+    if (sortOrder === "desc") {
+      return b.item_name.localeCompare(a.item_name);
+    }
+    return 0;
+  });
 
   return (
     <div className="flex flex-col gap-4">
@@ -38,8 +52,16 @@ const ViewProduct = () => {
             showSavedOnly={showSavedOnly}
             onToggle={() => setShowSavedOnly((prev) => !prev)}
           />
-          <ArrowDownAZ className="w-5 h-5" />
-          <ArrowDownZA className="w-5 h-5" />
+          <button onClick={() => setSortOrder("asc")} aria-label="Sort A to Z">
+            <ArrowDownAZ
+              className={`w-5 h-5 transition-colors ${sortOrder === "asc" ? "text-yellow-400" : "text-white"}`}
+            />
+          </button>
+          <button onClick={() => setSortOrder("desc")} aria-label="Sort Z to A">
+            <ArrowDownZA
+              className={`w-5 h-5 transition-colors ${sortOrder === "desc" ? "text-yellow-400" : "text-white"}`}
+            />
+          </button>
         </div>
       </div>
 

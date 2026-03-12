@@ -5,12 +5,12 @@ const Navbar = () => {
   return (
     <div className="bg-black  flex items-center text-white justify-between p-4">
       <div className="flex items-center gap-3">
-        {/* <Image
-          src="/images/image.png"
+        <Image
+          src=""
           width={48}
           height={48}
           alt="Dashboard logo"
-        /> */}
+        />
         <h1 className="text-xl font-semibold">DashBoard</h1>
       </div>
       <div>
